@@ -20,6 +20,8 @@ module ActionDispatch
         # If any of the path parameters has an invalid encoding then
         # raise since it's likely to trigger errors further on.
         req.symbolized_path_parameters.each do |key, value|
+          next unless value.respond_to?(:valid_encoding?)
+
           unless value.valid_encoding?
             raise ActionController::BadRequest, "Invalid parameter: #{key} => #{value}"
           end
