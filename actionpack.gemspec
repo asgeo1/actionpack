@@ -1,4 +1,4 @@
-version = File.read(File.expand_path('../../RAILS_VERSION', __FILE__)).strip
+version = '4.1.4'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
